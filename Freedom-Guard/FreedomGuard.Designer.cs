@@ -32,6 +32,9 @@
             this.start_Guard = new System.Windows.Forms.Button();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.programToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitAndStopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.languagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.persianفارسیToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,12 +42,11 @@
             this.Status = new System.Windows.Forms.StatusStrip();
             this.ProgressBarStatus = new System.Windows.Forms.ToolStripProgressBar();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.exitAndStopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LogApp = new System.Windows.Forms.TextBox();
             this.LabelLogApp = new System.Windows.Forms.Label();
-            this.Gool_services = new System.Windows.Forms.Button();
+            this.Gool_services = new System.Windows.Forms.CheckBox();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenu.SuspendLayout();
             this.Status.SuspendLayout();
             this.SuspendLayout();
@@ -65,7 +67,8 @@
             this.MainMenu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.programToolStripMenuItem,
-            this.languagesToolStripMenuItem});
+            this.languagesToolStripMenuItem,
+            this.settingsToolStripMenuItem});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
             this.MainMenu.Size = new System.Drawing.Size(764, 24);
@@ -82,6 +85,27 @@
             this.programToolStripMenuItem.Name = "programToolStripMenuItem";
             this.programToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.programToolStripMenuItem.Text = "Program";
+            // 
+            // exitAndStopToolStripMenuItem
+            // 
+            this.exitAndStopToolStripMenuItem.Name = "exitAndStopToolStripMenuItem";
+            this.exitAndStopToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitAndStopToolStripMenuItem.Text = "Stop And Exit";
+            this.exitAndStopToolStripMenuItem.Click += new System.EventHandler(this.exitAndStopToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // stopToolStripMenuItem
+            // 
+            this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
+            this.stopToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.stopToolStripMenuItem.Text = "Stop";
+            this.stopToolStripMenuItem.Click += new System.EventHandler(this.stopToolStripMenuItem_Click);
             // 
             // languagesToolStripMenuItem
             // 
@@ -140,27 +164,6 @@
             this.StatusLabel.Size = new System.Drawing.Size(87, 17);
             this.StatusLabel.Text = "Not Running ...";
             // 
-            // exitAndStopToolStripMenuItem
-            // 
-            this.exitAndStopToolStripMenuItem.Name = "exitAndStopToolStripMenuItem";
-            this.exitAndStopToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exitAndStopToolStripMenuItem.Text = "Stop And Exit";
-            this.exitAndStopToolStripMenuItem.Click += new System.EventHandler(this.exitAndStopToolStripMenuItem_Click);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // stopToolStripMenuItem
-            // 
-            this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
-            this.stopToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.stopToolStripMenuItem.Text = "Stop";
-            this.stopToolStripMenuItem.Click += new System.EventHandler(this.stopToolStripMenuItem_Click);
-            // 
             // LogApp
             // 
             this.LogApp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -183,14 +186,32 @@
             // 
             // Gool_services
             // 
+            this.Gool_services.AutoSize = true;
             this.Gool_services.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.Gool_services.Location = new System.Drawing.Point(621, 27);
+            this.Gool_services.Location = new System.Drawing.Point(194, 35);
             this.Gool_services.Name = "Gool_services";
-            this.Gool_services.Size = new System.Drawing.Size(131, 38);
-            this.Gool_services.TabIndex = 6;
-            this.Gool_services.Text = "Gool";
+            this.Gool_services.Size = new System.Drawing.Size(124, 24);
+            this.Gool_services.TabIndex = 7;
+            this.Gool_services.Text = "Gool Service";
             this.Gool_services.UseVisualStyleBackColor = true;
+            this.Gool_services.CheckedChanged += new System.EventHandler(this.Gool_services_CheckedChanged);
             this.Gool_services.Click += new System.EventHandler(this.Gool_services_Click);
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.settingsToolStripMenuItem.Text = "Help";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // FreedomGuard
             // 
@@ -235,7 +256,9 @@
         private System.Windows.Forms.ToolStripMenuItem stopToolStripMenuItem;
         private System.Windows.Forms.TextBox LogApp;
         private System.Windows.Forms.Label LabelLogApp;
-        private System.Windows.Forms.Button Gool_services;
+        private System.Windows.Forms.CheckBox Gool_services;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 

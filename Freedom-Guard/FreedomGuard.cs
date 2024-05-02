@@ -128,6 +128,9 @@ namespace Freedom_Guard
                 exitAndStopToolStripMenuItem.Text = "خروج و متوقف کردن سرویس";
                 exitToolStripMenuItem.Text = "خروج";
                 stopToolStripMenuItem.Text = "متوقف کردن سرویس";
+                settingsToolStripMenuItem.Text = "راهنما";
+                aboutToolStripMenuItem.Text = "درباره برنامه";
+                stopToolStripMenuItem.Text = "متوقف کردن سرویس";
                 Gool_services.Text = "سرویس گول";
                 MainMenu.RightToLeft = RightToLeft.Yes;
             }
@@ -192,11 +195,40 @@ namespace Freedom_Guard
         public string services = "";
         private void Gool_services_Click(object sender, EventArgs e)
         {
-            services = "Gool";
-            Switchs = "--gool";
-            Gool_services.Text += " ✅";
-            var INIApp = new IniFile("Settings.ini");
-            INIApp.Write("gool", "true", "setting");
+
+
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Application Name : Freedom Guard \n"
+                + "Version : 1.2 \n"
+                + "Source Code : github.com/fwldom/Freedom-Guard"
+                + "Description : this is Client For warp-plus"
+                + "Content : fwldom@duck.com","About Freedom Guard");
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Gool_services_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Gool_services.Checked == false)
+            {
+                services = "";
+                Switchs = "";
+                var INIApp = new IniFile("Settings.ini");
+                INIApp.Write("gool", "false", "setting");
+            }
+            else
+            {
+                services = "Gool";
+                Switchs = "--gool";
+                var INIApp = new IniFile("Settings.ini");
+                INIApp.Write("gool", "true", "setting");
+            }
         }
     }
 }
