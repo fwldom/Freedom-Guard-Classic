@@ -47,6 +47,7 @@
             this.Gool_services = new System.Windows.Forms.CheckBox();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.runServicesWithStartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenu.SuspendLayout();
             this.Status.SuspendLayout();
             this.SuspendLayout();
@@ -81,7 +82,8 @@
             this.programToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitAndStopToolStripMenuItem,
             this.exitToolStripMenuItem,
-            this.stopToolStripMenuItem});
+            this.stopToolStripMenuItem,
+            this.runServicesWithStartToolStripMenuItem});
             this.programToolStripMenuItem.Name = "programToolStripMenuItem";
             this.programToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.programToolStripMenuItem.Text = "Program";
@@ -89,21 +91,21 @@
             // exitAndStopToolStripMenuItem
             // 
             this.exitAndStopToolStripMenuItem.Name = "exitAndStopToolStripMenuItem";
-            this.exitAndStopToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitAndStopToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.exitAndStopToolStripMenuItem.Text = "Stop And Exit";
             this.exitAndStopToolStripMenuItem.Click += new System.EventHandler(this.exitAndStopToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // stopToolStripMenuItem
             // 
             this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
-            this.stopToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.stopToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.stopToolStripMenuItem.Text = "Stop";
             this.stopToolStripMenuItem.Click += new System.EventHandler(this.stopToolStripMenuItem_Click);
             // 
@@ -213,6 +215,13 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // runServicesWithStartToolStripMenuItem
+            // 
+            this.runServicesWithStartToolStripMenuItem.Name = "runServicesWithStartToolStripMenuItem";
+            this.runServicesWithStartToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.runServicesWithStartToolStripMenuItem.Text = "Run Services With Start App";
+            this.runServicesWithStartToolStripMenuItem.Click += new System.EventHandler(this.runServicesWithStartToolStripMenuItem_Click);
+            // 
             // FreedomGuard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,6 +268,7 @@
         private System.Windows.Forms.CheckBox Gool_services;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem runServicesWithStartToolStripMenuItem;
     }
 }
 

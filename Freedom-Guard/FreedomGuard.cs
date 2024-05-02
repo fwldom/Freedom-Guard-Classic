@@ -112,6 +112,14 @@ namespace Freedom_Guard
             {
                 var INIApp = new IniFile("Settings.ini");
                 Lang = INIApp.Read("lang", "setting");
+                if (INIApp.Read("gool", "setting") == "true")
+                {
+                    Gool_services.Checked = true;
+                }
+                if (INIApp.Read("runWtStart", "setting") == "true")
+                {
+                    start_Guard.PerformClick();
+                }
             }
             catch
             {
@@ -131,6 +139,7 @@ namespace Freedom_Guard
                 settingsToolStripMenuItem.Text = "راهنما";
                 aboutToolStripMenuItem.Text = "درباره برنامه";
                 stopToolStripMenuItem.Text = "متوقف کردن سرویس";
+                runServicesWithStartToolStripMenuItem.Text = "اجرای سرویس ها با اجرای برنامه";
                 Gool_services.Text = "سرویس گول";
                 MainMenu.RightToLeft = RightToLeft.Yes;
             }
@@ -229,6 +238,12 @@ namespace Freedom_Guard
                 var INIApp = new IniFile("Settings.ini");
                 INIApp.Write("gool", "true", "setting");
             }
+        }
+
+        private void runServicesWithStartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var INIApp = new IniFile("Settings.ini");
+            INIApp.Write("runWtStart", "true", "setting");
         }
     }
 }
