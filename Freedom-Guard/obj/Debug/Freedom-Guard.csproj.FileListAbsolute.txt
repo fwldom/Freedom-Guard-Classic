@@ -1,0 +1,9 @@
+c:\users\fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\bin\Debug\Freedom-Guard.exe.config
+c:\users\fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\bin\Debug\Freedom-Guard.exe
+c:\users\fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\bin\Debug\Freedom-Guard.pdb
+c:\users\fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\obj\Debug\Freedom-Guard.csprojResolveAssemblyReference.cache
+c:\users\fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\obj\Debug\Freedom_Guard.FreedomGuard.resources
+c:\users\fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\obj\Debug\Freedom_Guard.Properties.Resources.resources
+c:\users\fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\obj\Debug\Freedom-Guard.csproj.GenerateResource.Cache
+c:\users\fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\obj\Debug\Freedom-Guard.exe
+c:\users\fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\obj\Debug\Freedom-Guard.pdb
