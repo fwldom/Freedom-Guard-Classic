@@ -12,7 +12,7 @@ using Microsoft.Win32;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Reflection;
-
+using Syncfusion.Windows.Forms.Enums;
 namespace Freedom_Guard
 {
     public partial class FreedomGuard : Form
@@ -31,7 +31,7 @@ namespace Freedom_Guard
         {
             // Start Application
             string exePath = "warp-plus.exe";
-            Stop_Guard.PerformClick();
+            Stop_Guard();
             if (System.IO.File.Exists(exePath))
             {
                 ProgressBarStatus.Value = 10;
@@ -70,7 +70,7 @@ namespace Freedom_Guard
             Registry.SetValue(registryKey, "ProxyEnable", proxyEnabledValue);
             Registry.SetValue(registryKey, "ProxyServerFlags", 3);
         }
-        private void Stop_Guard_Click(object sender, EventArgs e)
+        private void Stop_Guard()
         {
             try
             {
@@ -88,24 +88,11 @@ namespace Freedom_Guard
             {
 
             }
-        }
 
-        private void exitAndStopToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Stop_Guard.PerformClick();
-            Application.Exit();
-        }
-
-        private void stopToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Stop_Guard.PerformClick();
-        }
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
         public string Lang = "en";
+        public string services = "en";
+
         private void FreedomGuard_Load(object sender, EventArgs e)
         {
             try
@@ -119,6 +106,18 @@ namespace Freedom_Guard
                 if (INIApp.Read("runWtStart", "setting") == "true")
                 {
                     start_Guard.PerformClick();
+                    if (Lang == "fa")
+                    {
+                    }
+                    else
+                    {
+                    }
+                }
+                else
+                {
+                    if (Lang == "fa")
+                    {
+                    }
                 }
             }
             catch
@@ -129,19 +128,8 @@ namespace Freedom_Guard
             if (Lang == "fa")
             {
                 start_Guard.Text = "شروع";
-                Stop_Guard.Text = "متوقف";
                 LabelLogApp.Text = "رویداد های برنامه";
-                programToolStripMenuItem.Text = "برنامه";
-                languagesToolStripMenuItem.Text = "زبان";
-                exitAndStopToolStripMenuItem.Text = "خروج و متوقف کردن سرویس";
-                exitToolStripMenuItem.Text = "خروج";
-                stopToolStripMenuItem.Text = "متوقف کردن سرویس";
-                settingsToolStripMenuItem.Text = "راهنما";
-                aboutToolStripMenuItem.Text = "درباره برنامه";
-                stopToolStripMenuItem.Text = "متوقف کردن سرویس";
-                runServicesWithStartToolStripMenuItem.Text = "اجرای سرویس ها با اجرای برنامه";
                 Gool_services.Text = "سرویس گول";
-                MainMenu.RightToLeft = RightToLeft.Yes;
             }
         }
         class IniFile   // revision 11
@@ -188,34 +176,6 @@ namespace Freedom_Guard
             }
         }
 
-        private void persianفارسیToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var INIApp = new IniFile("Settings.ini");
-            INIApp.Write("lang", "fa", "setting");
-            Application.Restart();
-        }
-
-        private void englishToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var INIApp = new IniFile("Settings.ini");
-            INIApp.Write("lang", "en", "setting");
-            Application.Restart();
-        }
-        public string services = "";
-        private void Gool_services_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Application Name : Freedom Guard \n"
-                + "Version : 1.2 \n"
-                + "Source Code : github.com/fwldom/Freedom-Guard"
-                + "Description : this is Client For warp-plus"
-                + "Content : fwldom@duck.com","About Freedom Guard");
-        }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -243,7 +203,55 @@ namespace Freedom_Guard
         private void runServicesWithStartToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var INIApp = new IniFile("Settings.ini");
-            INIApp.Write("runWtStart", "true", "setting");
+            if (INIApp.Read("runWtStart", "setting") == "true")
+            {
+                INIApp.Write("runWtStart", "false", "setting");
+            }
+            else
+            {
+                INIApp.Write("runWtStart", "true", "setting");
+            }
+            Application.Restart();
+        }
+
+        private void restartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void MainMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void MenuShowHide_Click(object sender, EventArgs e)
+        {
+            if (MenuPanel.Visible == true)
+            {
+                MenuPanel.Visible = false;
+
+            }
+            else
+            {
+                MenuPanel.Visible = true;
+
+            }
+        }
+
+        private void LogApp_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LabelLogApp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CloseApp_Click(object sender, EventArgs e)
+        {
+            Stop_Guard();
+            Application.Exit();
         }
     }
 }
