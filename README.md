@@ -3,7 +3,11 @@ Is Unoffical Client for warp plus in ([Github](https://github.com/bepass-org/war
 # Features
 * GUI Client
 * Gool Service
-* Persian Language
+* Full Persian Language
+* Full English Language
+* Psiphon Mode + 33 Country
+* Scan Mode (IP Clean)
+* ...
 # install 
  Go ([Latest](https://github.com/fwldom/Freedom-Guard/releases/latest))
 # گارد آزادی
@@ -12,5 +16,8 @@ Is Unoffical Client for warp plus in ([Github](https://github.com/bepass-org/war
 * رابط کاربری گرافیکی
 * سرویس گول
 * زبان فارسی
+* زبان انگلیسی
+* سایفون مود برای دور زدن تحریم ها
+* حالت اسکن (آیپی تمیز)
 # نصب 
  به ([Latest](https://github.com/fwldom/Freedom-Guard/releases/latest)) بروید
