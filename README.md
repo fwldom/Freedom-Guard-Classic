@@ -19,5 +19,6 @@ Is Unoffical Client for warp plus in ([Github](https://github.com/bepass-org/war
 * زبان انگلیسی
 * سایفون مود برای دور زدن تحریم ها
 * حالت اسکن (آیپی تمیز)
+* ...
 # نصب 
  به ([Latest](https://github.com/fwldom/Freedom-Guard/releases/latest)) بروید
