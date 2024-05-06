@@ -23,4 +23,4 @@ Is Unoffical Client for warp plus in ([Github](https://github.com/bepass-org/war
 # نصب 
  به ([Latest](https://github.com/fwldom/Freedom-Guard/releases/latest)) بروید
  # VirusTotal |  نتیجه ویروس توتال
-(https://www.virustotal.com/gui/file/a0d9f0c0a280d5ac84789bf21085988cfcbf7d80b2d5f521b6044f0704fbdecf))
+([Virus Total Freedom-Guard.zip](https://www.virustotal.com/gui/file/a0d9f0c0a280d5ac84789bf21085988cfcbf7d80b2d5f521b6044f0704fbdecf))
