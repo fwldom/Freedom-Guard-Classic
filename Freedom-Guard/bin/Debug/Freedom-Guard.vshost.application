@@ -7,14 +7,14 @@
     <framework targetVersion="4.6.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Freedom-Guard.exe.manifest" size="4960">
+    <dependentAssembly dependencyType="install" codebase="Freedom-Guard.exe.manifest" size="5045">
       <assemblyIdentity name="Freedom-Guard.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>uKbwlQzx+5X68U5wy7mpOiKj2hD9LpjC+O48q3gALmw=</dsig:DigestValue>
+        <dsig:DigestValue>wt7DfvSAuB92ccY8BcSKs4xpxuW7hncXnZ5WncXBzCE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

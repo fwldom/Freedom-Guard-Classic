@@ -1,0 +1,17 @@
+C:\Users\Fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\bin\x86\Debug\Freedom-Guard.exe.config
+C:\Users\Fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\bin\x86\Debug\Freedom-Guard.exe.manifest
+C:\Users\Fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\bin\x86\Debug\Freedom-Guard.application
+C:\Users\Fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\bin\x86\Debug\Freedom-Guard.exe
+C:\Users\Fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\bin\x86\Debug\Freedom-Guard.pdb
+C:\Users\Fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\bin\x86\Debug\Newtonsoft.Json.dll
+C:\Users\Fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\bin\x86\Debug\Newtonsoft.Json.xml
+C:\Users\Fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\obj\x86\Debug\Freedom-Guard.csprojResolveAssemblyReference.cache
+C:\Users\Fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\obj\x86\Debug\Freedom_Guard.Freedom_Guard_Dns.resources
+C:\Users\Fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\obj\x86\Debug\Freedom_Guard.Freedom_Guard_V2ray.resources
+C:\Users\Fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\obj\x86\Debug\Freedom_Guard.FreedomGuard.resources
+C:\Users\Fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\obj\x86\Debug\Freedom_Guard.Properties.Resources.resources
+C:\Users\Fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\obj\x86\Debug\Freedom-Guard.csproj.GenerateResource.Cache
+C:\Users\Fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\obj\x86\Debug\Freedom-Guard.exe.manifest
+C:\Users\Fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\obj\x86\Debug\Freedom-Guard.application
+C:\Users\Fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\obj\x86\Debug\Freedom-Guard.exe
+C:\Users\Fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\obj\x86\Debug\Freedom-Guard.pdb
