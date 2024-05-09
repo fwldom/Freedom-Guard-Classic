@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -22,10 +23,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -37,6 +38,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,27 +49,33 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>10322EA130AA7657F42D460ACED04D50D295364C</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Freedom-Guard_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ico.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="ReaLTaiizor, Version=3.7.8.4, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ReaLTaiizor.3.7.8.4\lib\net461\ReaLTaiizor.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Syncfusion.Core.WinForms, Version=25.1400.42.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Core.WinForms.25.1.42\lib\net40\Syncfusion.Core.WinForms.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Syncfusion.Licensing, Version=25.1450.42.0, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Licensing.25.1.42\lib\net45\Syncfusion.Licensing.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Syncfusion.Shared.Base, Version=25.1400.42.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Shared.Base.25.1.42\lib\net40\Syncfusion.Shared.Base.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -79,6 +87,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Freedom-Guard-Dns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Freedom-Guard-Dns.Designer.cs">
+      <DependentUpon>Freedom-Guard-Dns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Freedom-Guard-V2ray.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Freedom-Guard-V2ray.Designer.cs">
+      <DependentUpon>Freedom-Guard-V2ray.cs</DependentUpon>
+    </Compile>
     <Compile Include="FreedomGuard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +107,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Freedom-Guard-Dns.resx">
+      <DependentUpon>Freedom-Guard-Dns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Freedom-Guard-V2ray.resx">
+      <DependentUpon>Freedom-Guard-V2ray.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FreedomGuard.resx">
       <DependentUpon>FreedomGuard.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +125,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Freedom-Guard_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

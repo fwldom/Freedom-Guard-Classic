@@ -12,7 +12,10 @@ using Microsoft.Win32;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Reflection;
-using Syncfusion.Windows.Forms.Enums;
+using System.Net;
+using System.Net.Sockets;
+using System.Threading;
+
 namespace Freedom_Guard
 {
     public partial class FreedomGuard : Form
@@ -26,6 +29,7 @@ namespace Freedom_Guard
             {
                 Switchs += " --gool ";
                 services += " + Gool ";
+                PsCountry.SelectedIndex = 0;
             }
             if (scan_Warp.Checked)
             {
@@ -47,6 +51,73 @@ namespace Freedom_Guard
         {
             LogApp.AppendText(textlog + Environment.NewLine);
         }
+        public static bool PingWithSocks5Proxy(string proxyHost, int proxyPort, string targetUrl)
+        {
+            try
+            {
+                // Function For Test Connection With Socks5 Proxy 
+                using (var client = new TcpClient(proxyHost, proxyPort))
+                {
+                    NetworkStream stream = client.GetStream();
+                    byte[] initialHandshake = { 5, 1, 0 };
+                    stream.Write(initialHandshake, 0, initialHandshake.Length);
+                    byte[] response = new byte[2];
+                    stream.Read(response, 0, response.Length);
+                    if (response[0] == 5 && response[1] == 0)
+                    {
+                        byte[] request = new byte[7 + targetUrl.Length];
+                        request[0] = 5; // SOCKS5 version
+                        request[1] = 1; // Connect command
+                        request[2] = 0; // Reserved byte
+                        request[3] = 3; // Address type (domain name)
+                        request[4] = (byte)targetUrl.Length; // Length of the domain name
+                        Encoding.ASCII.GetBytes(targetUrl).CopyTo(request, 5); // Copy the domain name
+                        BitConverter.GetBytes(IPAddress.HostToNetworkOrder((short)80)).CopyTo(request, 5 + targetUrl.Length); // Destination port
+
+                        // Send the request to connect to the target URL
+                        stream.Write(request, 0, request.Length);
+
+                        // Receive the response from the SOCKS5 proxy
+                        byte[] response2 = new byte[10];
+                        stream.Read(response2, 0, response2.Length);
+
+                        // Check if the connection to the target URL was successful
+                        if (response2[1] == 0)
+                        {
+
+                            // Perform any additional operations here (e.g., send HTTP request, receive response)
+                            // For simplicity, we are just printing success message.
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                    }
+                }
+            }
+            catch
+            {
+                return false;
+            }
+            return false;
+        }
+        public void TestConnect()
+        {
+            System.Threading.Thread.Sleep(5000);
+            if (PingWithSocks5Proxy("127.0.0.1", 8086, "ircf.space"))
+            {
+                MessageBox.Show("Connected | متصل شدید");
+            }
+            else
+            {
+                MessageBox.Show("Not Connected Try Again | متصل نشد دوباره امتحان کنید");
+                Stop_Guard();
+            }
+        }
         public string Switchs = "";
         private void start_Guard_Click(object sender, EventArgs e)
         {
@@ -62,6 +133,8 @@ namespace Freedom_Guard
                     {
                         FileName = exePath,
                         UseShellExecute = true,
+                        CreateNoWindow = true,
+                        WindowStyle = ProcessWindowStyle.Hidden,
                         Arguments = Switchs
                     };
                     ProgressBarStatus.Value = 30;
@@ -84,6 +157,8 @@ namespace Freedom_Guard
                     {
                         start_Guard.Text = "Disconnect";
                         StatusText.Text = "Connected";
+                        Thread TestConn = new Thread(TestConnect);
+                        TestConn.Start();
                     }
                     StatusGuard = true;
                 }
@@ -125,7 +200,6 @@ namespace Freedom_Guard
         {
             try
             {
-                process.Kill();
                 string proxyAddress = "127.0.0.1";
                 string proxyPort = "8086";
                 bool proxyEnabled = false;
@@ -133,6 +207,7 @@ namespace Freedom_Guard
                 SetProxySettings(proxyAddress, proxyPort, proxyEnabled);
                 ProgressBarStatus.Value = 100;
                 Log("Not Set Proxy Server ...");
+                process.Kill();
             }
             catch
             {
@@ -197,6 +272,8 @@ namespace Freedom_Guard
                 Restart.Text = "اجرای مجدد برنامه";
                 scan_Warp.Text = "اسکن وارپ";
                 languageToolStripMenuItem.Text = "زبان ها";
+                ExitApp.Text = "بستن برنامه";
+                showAbout.Text = "درباره برنامه";
             }
         }
         class IniFile   // revision 11
@@ -381,6 +458,63 @@ namespace Freedom_Guard
 
         private void StatusText_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void ShowV2Ray_Click(object sender, EventArgs e)
+        {
+            Freedom_Guard_V2ray V2ray = new Freedom_Guard_V2ray();
+            V2ray.Show();
+        }
+
+        private void ShowDns_Click(object sender, EventArgs e)
+        {
+            Freedom_Guard_Dns DNS = new Freedom_Guard_Dns();
+            DNS.Show();
+        }
+        private bool dragging = false;
+        private Point dragCursorPoint;
+        private Point dragFormPoint;
+        private void topPanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            dragCursorPoint = Cursor.Position;
+            dragFormPoint = this.Location;
+        }
+
+        private void topPanel_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point newPoint = this.PointToScreen(new Point(e.X, e.Y));
+                newPoint.Offset(-dragCursorPoint.X, -dragCursorPoint.Y);
+                this.Location = new Point(dragFormPoint.X + newPoint.X,
+                                           dragFormPoint.Y + newPoint.Y);
+            }
+        }
+
+        private void topPanel_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+
+        }
+
+        private void ExitApp_Click(object sender, EventArgs e)
+        {
+            CloseApp.PerformClick();
+        }
+
+        private void FreedomGuard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Stop_Guard();
+        }
+
+        private void showAbout_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Freedom Guard VPN + Warp + Gool + Psiphon + Dns Changer \n" +
+                "Version : 1.2.2 \n" +
+                "Contact : fwldom@duck.com \n" + 
+                "Date Published : 1403/02/20 |  2024/05/09 \n","About Freedom Guard");
 
         }
     }

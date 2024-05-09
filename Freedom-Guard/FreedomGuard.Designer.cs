@@ -37,11 +37,14 @@
             this.LabelLogApp = new System.Windows.Forms.Label();
             this.Gool_services = new System.Windows.Forms.CheckBox();
             this.MenuPanel = new System.Windows.Forms.Panel();
+            this.Restart = new System.Windows.Forms.Button();
             this.SelectLanguage = new System.Windows.Forms.MenuStrip();
             this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.persianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.topPanel = new System.Windows.Forms.Panel();
+            this.ShowDns = new System.Windows.Forms.Button();
+            this.ShowV2Ray = new System.Windows.Forms.Button();
             this.CloseApp = new System.Windows.Forms.Button();
             this.TextLabelTopPanel = new System.Windows.Forms.Label();
             this.MenuShowHide = new System.Windows.Forms.Button();
@@ -49,7 +52,8 @@
             this.scan_Warp = new System.Windows.Forms.CheckBox();
             this.PsCountry = new System.Windows.Forms.ComboBox();
             this.TextShowps = new System.Windows.Forms.Label();
-            this.Restart = new System.Windows.Forms.Button();
+            this.ExitApp = new System.Windows.Forms.Button();
+            this.showAbout = new System.Windows.Forms.Button();
             this.Status.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             this.SelectLanguage.SuspendLayout();
@@ -129,6 +133,8 @@
             // MenuPanel
             // 
             this.MenuPanel.BackColor = System.Drawing.Color.DarkGray;
+            this.MenuPanel.Controls.Add(this.showAbout);
+            this.MenuPanel.Controls.Add(this.ExitApp);
             this.MenuPanel.Controls.Add(this.Restart);
             this.MenuPanel.Controls.Add(this.SelectLanguage);
             this.MenuPanel.Location = new System.Drawing.Point(12, 38);
@@ -136,6 +142,17 @@
             this.MenuPanel.Size = new System.Drawing.Size(148, 342);
             this.MenuPanel.TabIndex = 8;
             this.MenuPanel.Visible = false;
+            // 
+            // Restart
+            // 
+            this.Restart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.Restart.Location = new System.Drawing.Point(4, 268);
+            this.Restart.Name = "Restart";
+            this.Restart.Size = new System.Drawing.Size(142, 30);
+            this.Restart.TabIndex = 1;
+            this.Restart.Text = "Restart";
+            this.Restart.UseVisualStyleBackColor = true;
+            this.Restart.Click += new System.EventHandler(this.Restart_Click);
             // 
             // SelectLanguage
             // 
@@ -159,7 +176,7 @@
             // englishToolStripMenuItem
             // 
             this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
-            this.englishToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.englishToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.englishToolStripMenuItem.Text = "English";
             this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
             // 
@@ -173,6 +190,8 @@
             // topPanel
             // 
             this.topPanel.BackColor = System.Drawing.Color.White;
+            this.topPanel.Controls.Add(this.ShowDns);
+            this.topPanel.Controls.Add(this.ShowV2Ray);
             this.topPanel.Controls.Add(this.CloseApp);
             this.topPanel.Controls.Add(this.TextLabelTopPanel);
             this.topPanel.Controls.Add(this.MenuShowHide);
@@ -181,6 +200,31 @@
             this.topPanel.Name = "topPanel";
             this.topPanel.Size = new System.Drawing.Size(434, 33);
             this.topPanel.TabIndex = 9;
+            this.topPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.topPanel_MouseDown);
+            this.topPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.topPanel_MouseMove);
+            this.topPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.topPanel_MouseUp);
+            // 
+            // ShowDns
+            // 
+            this.ShowDns.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.ShowDns.Location = new System.Drawing.Point(127, 4);
+            this.ShowDns.Name = "ShowDns";
+            this.ShowDns.Size = new System.Drawing.Size(75, 27);
+            this.ShowDns.TabIndex = 15;
+            this.ShowDns.Text = "DNS";
+            this.ShowDns.UseVisualStyleBackColor = true;
+            this.ShowDns.Click += new System.EventHandler(this.ShowDns_Click);
+            // 
+            // ShowV2Ray
+            // 
+            this.ShowV2Ray.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.ShowV2Ray.Location = new System.Drawing.Point(46, 4);
+            this.ShowV2Ray.Name = "ShowV2Ray";
+            this.ShowV2Ray.Size = new System.Drawing.Size(75, 27);
+            this.ShowV2Ray.TabIndex = 14;
+            this.ShowV2Ray.Text = "V2ray";
+            this.ShowV2Ray.UseVisualStyleBackColor = true;
+            this.ShowV2Ray.Click += new System.EventHandler(this.ShowV2Ray_Click);
             // 
             // CloseApp
             // 
@@ -201,9 +245,9 @@
             // TextLabelTopPanel
             // 
             this.TextLabelTopPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.TextLabelTopPanel.Location = new System.Drawing.Point(152, 5);
+            this.TextLabelTopPanel.Location = new System.Drawing.Point(208, 6);
             this.TextLabelTopPanel.Name = "TextLabelTopPanel";
-            this.TextLabelTopPanel.Size = new System.Drawing.Size(126, 20);
+            this.TextLabelTopPanel.Size = new System.Drawing.Size(130, 20);
             this.TextLabelTopPanel.TabIndex = 1;
             this.TextLabelTopPanel.Text = "Freedom Guard";
             this.TextLabelTopPanel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -298,16 +342,32 @@
             this.TextShowps.TabIndex = 13;
             this.TextShowps.Text = "Psiphon Country";
             // 
-            // Restart
+            // ExitApp
             // 
-            this.Restart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.Restart.Location = new System.Drawing.Point(3, 309);
-            this.Restart.Name = "Restart";
-            this.Restart.Size = new System.Drawing.Size(142, 30);
-            this.Restart.TabIndex = 1;
-            this.Restart.Text = "Restart";
-            this.Restart.UseVisualStyleBackColor = true;
-            this.Restart.Click += new System.EventHandler(this.Restart_Click);
+            this.ExitApp.BackColor = System.Drawing.Color.Gray;
+            this.ExitApp.FlatAppearance.BorderSize = 0;
+            this.ExitApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitApp.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18.25F, System.Drawing.FontStyle.Bold);
+            this.ExitApp.ForeColor = System.Drawing.Color.Red;
+            this.ExitApp.Location = new System.Drawing.Point(4, 303);
+            this.ExitApp.Name = "ExitApp";
+            this.ExitApp.Size = new System.Drawing.Size(139, 34);
+            this.ExitApp.TabIndex = 16;
+            this.ExitApp.Text = "Exit";
+            this.ExitApp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.ExitApp.UseVisualStyleBackColor = false;
+            this.ExitApp.Click += new System.EventHandler(this.ExitApp_Click);
+            // 
+            // showAbout
+            // 
+            this.showAbout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.showAbout.Location = new System.Drawing.Point(3, 232);
+            this.showAbout.Name = "showAbout";
+            this.showAbout.Size = new System.Drawing.Size(142, 30);
+            this.showAbout.TabIndex = 17;
+            this.showAbout.Text = "About";
+            this.showAbout.UseVisualStyleBackColor = true;
+            this.showAbout.Click += new System.EventHandler(this.showAbout_Click);
             // 
             // FreedomGuard
             // 
@@ -331,6 +391,7 @@
             this.Name = "FreedomGuard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Freedom Guard";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FreedomGuard_FormClosed);
             this.Load += new System.EventHandler(this.FreedomGuard_Load);
             this.Status.ResumeLayout(false);
             this.Status.PerformLayout();
@@ -367,6 +428,10 @@
         private System.Windows.Forms.ComboBox PsCountry;
         private System.Windows.Forms.Label TextShowps;
         private System.Windows.Forms.Button Restart;
+        private System.Windows.Forms.Button ShowV2Ray;
+        private System.Windows.Forms.Button ShowDns;
+        private System.Windows.Forms.Button ExitApp;
+        private System.Windows.Forms.Button showAbout;
     }
 }
 
