@@ -37,6 +37,8 @@
             this.LabelLogApp = new System.Windows.Forms.Label();
             this.Gool_services = new System.Windows.Forms.CheckBox();
             this.MenuPanel = new System.Windows.Forms.Panel();
+            this.showAbout = new System.Windows.Forms.Button();
+            this.ExitApp = new System.Windows.Forms.Button();
             this.Restart = new System.Windows.Forms.Button();
             this.SelectLanguage = new System.Windows.Forms.MenuStrip();
             this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,8 +54,6 @@
             this.scan_Warp = new System.Windows.Forms.CheckBox();
             this.PsCountry = new System.Windows.Forms.ComboBox();
             this.TextShowps = new System.Windows.Forms.Label();
-            this.ExitApp = new System.Windows.Forms.Button();
-            this.showAbout = new System.Windows.Forms.Button();
             this.Status.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             this.SelectLanguage.SuspendLayout();
@@ -106,7 +106,6 @@
             this.LogApp.Name = "LogApp";
             this.LogApp.Size = new System.Drawing.Size(256, 172);
             this.LogApp.TabIndex = 4;
-            this.LogApp.TextChanged += new System.EventHandler(this.LogApp_TextChanged);
             // 
             // LabelLogApp
             // 
@@ -116,7 +115,6 @@
             this.LabelLogApp.Size = new System.Drawing.Size(80, 13);
             this.LabelLogApp.TabIndex = 5;
             this.LabelLogApp.Text = "Log Application";
-            this.LabelLogApp.Click += new System.EventHandler(this.LabelLogApp_Click);
             // 
             // Gool_services
             // 
@@ -142,6 +140,33 @@
             this.MenuPanel.Size = new System.Drawing.Size(148, 342);
             this.MenuPanel.TabIndex = 8;
             this.MenuPanel.Visible = false;
+            // 
+            // showAbout
+            // 
+            this.showAbout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.showAbout.Location = new System.Drawing.Point(3, 232);
+            this.showAbout.Name = "showAbout";
+            this.showAbout.Size = new System.Drawing.Size(142, 30);
+            this.showAbout.TabIndex = 17;
+            this.showAbout.Text = "About";
+            this.showAbout.UseVisualStyleBackColor = true;
+            this.showAbout.Click += new System.EventHandler(this.showAbout_Click);
+            // 
+            // ExitApp
+            // 
+            this.ExitApp.BackColor = System.Drawing.Color.Gray;
+            this.ExitApp.FlatAppearance.BorderSize = 0;
+            this.ExitApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitApp.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18.25F, System.Drawing.FontStyle.Bold);
+            this.ExitApp.ForeColor = System.Drawing.Color.Red;
+            this.ExitApp.Location = new System.Drawing.Point(4, 303);
+            this.ExitApp.Name = "ExitApp";
+            this.ExitApp.Size = new System.Drawing.Size(139, 34);
+            this.ExitApp.TabIndex = 16;
+            this.ExitApp.Text = "Exit";
+            this.ExitApp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.ExitApp.UseVisualStyleBackColor = false;
+            this.ExitApp.Click += new System.EventHandler(this.ExitApp_Click);
             // 
             // Restart
             // 
@@ -275,7 +300,6 @@
             this.StatusText.TabIndex = 10;
             this.StatusText.Text = "Disconnected";
             this.StatusText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.StatusText.Click += new System.EventHandler(this.StatusText_Click);
             // 
             // scan_Warp
             // 
@@ -341,33 +365,6 @@
             this.TextShowps.Size = new System.Drawing.Size(118, 18);
             this.TextShowps.TabIndex = 13;
             this.TextShowps.Text = "Psiphon Country";
-            // 
-            // ExitApp
-            // 
-            this.ExitApp.BackColor = System.Drawing.Color.Gray;
-            this.ExitApp.FlatAppearance.BorderSize = 0;
-            this.ExitApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExitApp.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18.25F, System.Drawing.FontStyle.Bold);
-            this.ExitApp.ForeColor = System.Drawing.Color.Red;
-            this.ExitApp.Location = new System.Drawing.Point(4, 303);
-            this.ExitApp.Name = "ExitApp";
-            this.ExitApp.Size = new System.Drawing.Size(139, 34);
-            this.ExitApp.TabIndex = 16;
-            this.ExitApp.Text = "Exit";
-            this.ExitApp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.ExitApp.UseVisualStyleBackColor = false;
-            this.ExitApp.Click += new System.EventHandler(this.ExitApp_Click);
-            // 
-            // showAbout
-            // 
-            this.showAbout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.showAbout.Location = new System.Drawing.Point(3, 232);
-            this.showAbout.Name = "showAbout";
-            this.showAbout.Size = new System.Drawing.Size(142, 30);
-            this.showAbout.TabIndex = 17;
-            this.showAbout.Text = "About";
-            this.showAbout.UseVisualStyleBackColor = true;
-            this.showAbout.Click += new System.EventHandler(this.showAbout_Click);
             // 
             // FreedomGuard
             // 
