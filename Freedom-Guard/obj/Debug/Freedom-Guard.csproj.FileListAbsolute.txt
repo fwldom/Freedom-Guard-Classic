@@ -15,3 +15,22 @@ C:\Users\Fwldom\Documents\Visual Studio 2015\Projects\Freedom-Guard\Freedom-Guar
 C:\Users\Fwldom\Documents\Visual Studio 2015\Projects\Freedom-Guard\Freedom-Guard\obj\Debug\Freedom_Guard.Freedom_Guard_Dns.resources
 C:\Users\Fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\bin\Debug\Newtonsoft.Json.xml
+D:\Programming\Software\C#\Freedom-Guard\Freedom-Guard\bin\Debug\Freedom-Guard.exe.config
+D:\Programming\Software\C#\Freedom-Guard\Freedom-Guard\bin\Debug\Freedom-Guard.exe.manifest
+D:\Programming\Software\C#\Freedom-Guard\Freedom-Guard\bin\Debug\Freedom-Guard.application
+D:\Programming\Software\C#\Freedom-Guard\Freedom-Guard\bin\Debug\Freedom-Guard.exe
+D:\Programming\Software\C#\Freedom-Guard\Freedom-Guard\bin\Debug\Freedom-Guard.pdb
+D:\Programming\Software\C#\Freedom-Guard\Freedom-Guard\bin\Debug\Newtonsoft.Json.dll
+D:\Programming\Software\C#\Freedom-Guard\Freedom-Guard\bin\Debug\Newtonsoft.Json.xml
+D:\Programming\Software\C#\Freedom-Guard\Freedom-Guard\obj\Debug\Freedom-Guard.csproj.AssemblyReference.cache
+D:\Programming\Software\C#\Freedom-Guard\Freedom-Guard\obj\Debug\Freedom_Guard.Freedom_Guard_Dns.resources
+D:\Programming\Software\C#\Freedom-Guard\Freedom-Guard\obj\Debug\Freedom_Guard.Freedom_Guard_V2ray.resources
+D:\Programming\Software\C#\Freedom-Guard\Freedom-Guard\obj\Debug\Freedom_Guard.FreedomGuard.resources
+D:\Programming\Software\C#\Freedom-Guard\Freedom-Guard\obj\Debug\Freedom_Guard.Properties.Resources.resources
+D:\Programming\Software\C#\Freedom-Guard\Freedom-Guard\obj\Debug\Freedom-Guard.csproj.GenerateResource.cache
+D:\Programming\Software\C#\Freedom-Guard\Freedom-Guard\obj\Debug\Freedom-Guard.csproj.CoreCompileInputs.cache
+D:\Programming\Software\C#\Freedom-Guard\Freedom-Guard\obj\Debug\Freedom-Guard.exe.manifest
+D:\Programming\Software\C#\Freedom-Guard\Freedom-Guard\obj\Debug\Freedom-Guard.application
+D:\Programming\Software\C#\Freedom-Guard\Freedom-Guard\obj\Debug\Freedom-Guard.csproj.CopyComplete
+D:\Programming\Software\C#\Freedom-Guard\Freedom-Guard\obj\Debug\Freedom-Guard.exe
+D:\Programming\Software\C#\Freedom-Guard\Freedom-Guard\obj\Debug\Freedom-Guard.pdb

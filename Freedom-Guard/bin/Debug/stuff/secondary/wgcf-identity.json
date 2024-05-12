@@ -1,25 +1,25 @@
 {
-  "private_key": "kPREYNwEMBbRDuE8/6tWeAbUek6/2wRf+m9WOUoQe0o=",
-  "key": "4Khd9k7AcxtstR4uyEkq+/57NhmpWkVvxhoV0wKT42o=",
+  "private_key": "cJrBWaxF0mG/UzSbZCnGyF7/8Us6WIpwiK+pXS1dq1E=",
+  "key": "2isaXuzMbwq2yMuv1Ex7e7rBnHi1evvifoBk0jVCxmM=",
   "account": {
-    "created": "2024-05-08T20:33:42.681496362Z",
-    "updated": "2024-05-08T20:33:42.681496362Z",
-    "license": "h3SX152P-2a1W5h0I-s64iQR90",
+    "created": "2024-05-12T05:07:16.015388609Z",
+    "updated": "2024-05-12T05:07:16.015388609Z",
+    "license": "t28rzg34-5Kr8w19k-6tQ403GH",
     "premium_data": 0,
     "warp_plus": true,
     "account_type": "free",
     "referral_renewal_countdown": 0,
     "role": "child",
-    "id": "3a0b46c6-18cc-4b85-80fa-cc8f563bbe75",
+    "id": "246bc1f8-838b-4a31-87b6-c67e93ef9590",
     "quota": 0,
     "usage": 0,
     "referral_count": 0,
-    "ttl": "2024-08-06T20:33:42.681494912Z"
+    "ttl": "2024-08-10T05:07:16.015386009Z"
   },
   "place": 0,
   "fcm_token": "",
   "name": "",
-  "tos": "2024-05-09T00:03:44.3191593+03:30",
+  "tos": "2024-05-12T13:21:37.8795512+03:30",
   "locale": "en-US",
   "install_id": "",
   "warp_enabled": true,
@@ -30,8 +30,8 @@
       {
         "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
         "endpoint": {
-          "v4": "162.159.192.9:0",
-          "v6": "[2606:4700:d0::a29f:c009]:0",
+          "v4": "162.159.192.6:0",
+          "v6": "[2606:4700:d0::a29f:c006]:0",
           "host": "engage.cloudflareclient.com:2408",
           "ports": [
             2408,
@@ -45,18 +45,18 @@
     "interface": {
       "addresses": {
         "v4": "172.16.0.2",
-        "v6": "2606:4700:110:8704:d830:ca4c:fb93:7cbe"
+        "v6": "2606:4700:110:8ba3:40c:82b2:1338:7fbf"
       }
     },
     "services": {
       "http_proxy": "172.16.0.1:2480"
     },
-    "client_id": "QgWG"
+    "client_id": "L5k9"
   },
-  "token": "47a97880-f57a-458f-ad70-8b9ed8e2d012",
+  "token": "722d6918-109a-4f15-9671-6f142c365fa6",
   "enabled": true,
-  "id": "34fea274-2454-4cc8-b274-1acaeac25814",
-  "created": "2024-05-08T20:33:42.32893733Z",
-  "updated": "2024-05-08T20:33:42.32893733Z",
+  "id": "6ef0864b-6b83-45d8-a8e7-1e0abe767f36",
+  "created": "2024-05-12T05:07:15.637949066Z",
+  "updated": "2024-05-12T05:07:15.637949066Z",
   "waitlist_enabled": false
 }

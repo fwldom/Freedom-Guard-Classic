@@ -43,7 +43,7 @@
             // 
             // V2rayConnect
             // 
-            this.V2rayConnect.Location = new System.Drawing.Point(336, 132);
+            this.V2rayConnect.Location = new System.Drawing.Point(339, 39);
             this.V2rayConnect.Name = "V2rayConnect";
             this.V2rayConnect.Size = new System.Drawing.Size(75, 23);
             this.V2rayConnect.TabIndex = 1;
@@ -55,7 +55,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(543, 380);
+            this.ClientSize = new System.Drawing.Size(439, 116);
             this.Controls.Add(this.V2rayConnect);
             this.Controls.Add(this.URLConfig);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

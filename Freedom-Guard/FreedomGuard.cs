@@ -20,7 +20,8 @@ namespace Freedom_Guard
 {
     public partial class FreedomGuard : Form
     {
-        public bool StatusGuard = false;
+        public bool statusGuard = false;
+        public int timeConnected = 0;
         private void add_services(string args)
         {
             Switchs = "";
@@ -31,15 +32,19 @@ namespace Freedom_Guard
                 services += " + Gool ";
                 PsCountry.SelectedIndex = 0;
             }
-            if (scan_Warp.Checked)
+            else if (scan_Warp.Checked)
             {
                 Switchs += " --scan ";
                 services += " + Scan  ";
             }
-            if (PsCountry.SelectedItem.ToString() != "disable" && PsCountry.SelectedItem.ToString() != "")
+            else if (PsCountry.SelectedItem.ToString() != "disable" && PsCountry.SelectedItem.ToString() != "")
             {
                 Switchs += " --cfon --country " + (PsCountry.SelectedItem.ToString().Substring(PsCountry.SelectedItem.ToString().Length - 4).Replace("(", "").Replace(")", "")); ;
                 services += $" + Psiphon {PsCountry.SelectedItem.ToString()}  ";
+            }
+            else if (Guard_Mode.Checked == true)
+            {
+                services += " + Guard Mode";
             }
         }
         public FreedomGuard()
@@ -106,14 +111,18 @@ namespace Freedom_Guard
         }
         public void TestConnect()
         {
-            System.Threading.Thread.Sleep(5000);
+            System.Threading.Thread.Sleep(5000);// Sleep 5s And test connect with ircf.space && if lose proxy => Stop Services
             if (PingWithSocks5Proxy("127.0.0.1", 8086, "ircf.space"))
             {
-                MessageBox.Show("Connected | متصل شدید" + pingStatus);
+                ConnectTimer.Enabled = true;
+                if (Guard_Mode.Checked)
+                {
+                    guardModeTimer.Enabled = true;
+                }
+                Log("Connected !");
             }
             else
             {
-                MessageBox.Show("Not Connected Try Again | متصل نشد دوباره امتحان کنید");
                 Stop_Guard();
             }
         }
@@ -125,8 +134,9 @@ namespace Freedom_Guard
             Stop_Guard();// Stop Services
             if (System.IO.File.Exists(exePath))
             {
-                if (StatusGuard == false)
+                if (statusGuard == false)
                 {
+                    Log("Connecting ...");
                     ProgressBarStatus.Value = 10;
                     ProcessStartInfo startInfo = new ProcessStartInfo
                     {
@@ -138,14 +148,12 @@ namespace Freedom_Guard
                     };
                     ProgressBarStatus.Value = 30;
                     process = Process.Start(startInfo); // Run Warp-plus
-                    Log("Start Services ..."); // Log
                     string proxyAddress = "127.0.0.1";
                     string proxyPort = "8086";
                     bool proxyEnabled = true;
                     ProgressBarStatus.Value = 100;
                     SetProxySettings(proxyAddress, proxyPort, proxyEnabled); // Set System Proxy 
                     ProgressBarStatus.Value = 0;
-                    Log("Set Proxy Server ...");
                     if (Lang == "fa") // If Language  fa
                     {
                         start_Guard.Text = "قطع اتصال";
@@ -155,11 +163,11 @@ namespace Freedom_Guard
                     {
                         start_Guard.Text = "Disconnect";
                         StatusText.Text = "Connected";
-                        Thread TestConn = new Thread(TestConnect);
-                        TestConn.Start(); // Test Connection
                     }
+                    Thread TestConn = new Thread(TestConnect);
+                    TestConn.Start(); // Test Connection
                     StatusLabel.Text = "Running Warp " + services + " ...";
-                    StatusGuard = true;
+                    statusGuard = true;
                 }
                 // If Service On => Off Service
                 else
@@ -174,11 +182,11 @@ namespace Freedom_Guard
                         start_Guard.Text = "Connect";
                         StatusText.Text = "Disconnected";
                     }
-                    StatusGuard = false;
+                    statusGuard = false;
                     Stop_Guard();
                     // Service Off
                 }
-                
+
             }
             else // If problem to start warp-plus (no available warp-plus)
             {
@@ -209,7 +217,7 @@ namespace Freedom_Guard
                 Log("Stoped All Services ...");// Log
                 SetProxySettings(proxyAddress, proxyPort, proxyEnabled);//diable Proxy System
                 ProgressBarStatus.Value = 100;
-                Log("Not Set Proxy Server ...");//Log
+                Log("Not Set Proxy Server ..."); // Log
                 process.Kill(); // KILL warp-plus
                 if (Lang == "fa")// Edit Text btn&lable
                 {
@@ -220,6 +228,8 @@ namespace Freedom_Guard
                 {
                     start_Guard.Text = "Connect";
                     StatusText.Text = "Disconnected";
+                    timeConnected = 0;
+                    ConnectTimer.Enabled = false;
                 }
             }
             catch
@@ -237,28 +247,31 @@ namespace Freedom_Guard
         {
             try
             {
-                var INIApp = new IniFile("Settings.ini");//Load File Config
+                var INIApp = new IniFile("Settings.ini");// Load File Config for Check Services Enable
                 Lang = INIApp.Read("lang", "setting");
-                if (INIApp.Read("gool", "setting") == "true")//If Gool Service
+                if (INIApp.Read("gool", "setting") == "true")
                 {
                     Gool_services.Checked = true;
                 }
-                if (INIApp.Read("ps", "setting") != "")// If Psiphon
+                if (INIApp.Read("ps", "setting") != "")
                 {
                     PsCountry.SelectedIndex = Convert.ToInt32(INIApp.Read("ps", "setting"));
                 }
-                if (INIApp.Read("scan", "setting") == "true") // If Scan Warp (ip Clean)
+                if (INIApp.Read("scan", "setting") == "true")
                 {
                     scan_Warp.Checked = true;
+                }
+                if (INIApp.Read("guard", "setting") == "true")
+                {
+                    Guard_Mode.Checked = true;
                 }
                 add_services(""); // Check Service And Enable CheckBox and add To service variable
             }
             catch
             {
                 Lang = "en";
-
-            }
-            if (Lang == "fa") // Edit Text btn & Lable If Language == fa(Persian)
+             }
+            if (Lang == "fa") // Edit Text btn & Lable If Language == fa (Persian)
             {
                 start_Guard.Text = "اتصال";
                 LabelLogApp.Text = "رویداد های برنامه";
@@ -271,6 +284,7 @@ namespace Freedom_Guard
                 languageToolStripMenuItem.Text = "زبان ها";
                 ExitApp.Text = "بستن برنامه";
                 showAbout.Text = "درباره برنامه";
+                Guard_Mode.Text = "حالت نگهبان";
             }
         }
         // IniFile Write And Read
@@ -380,7 +394,7 @@ namespace Freedom_Guard
         private void scan_Warp_CheckedChanged(object sender, EventArgs e)
         {
             // Scan Warp Checkbox Change , Write To ini file 
-            add_services(""); 
+            add_services("");
             if (scan_Warp.Checked == false)
             {
                 var INIApp = new IniFile("Settings.ini");
@@ -469,5 +483,63 @@ namespace Freedom_Guard
                 "Contact : fwldom@duck.com \n" +
                 "Date Published : 1403/02/26 |  2024/05/15 \n", "About Freedom Guard");
         }
+
+        private void ConnectTimer_Tick(object sender, EventArgs e)
+        {
+            timeConnected++;
+            timeText.Text = timeConnected + " s";
+        }
+
+
+
+        private void Guard_Mode_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Guard_Mode.Checked == false)
+            {
+                var INIApp = new IniFile("Settings.ini");
+                INIApp.Write("guard", "false", "setting");
+            }
+            else
+            {
+                var INIApp = new IniFile("Settings.ini");
+                INIApp.Write("guard", "true", "setting");
+            }
+            add_services("");
+        }
+
+        private void guardModeTimer_Tick(object sender, EventArgs e)
+        {
+            if (statusGuard == true)
+            {
+                if (PingWithSocks5Proxy("127.0.0.1", 8086, "ircf.space"))
+                {
+                    // Connected To Internet with Proxy socks5 127.0.0.1:8086
+                }
+                else if (Gool_services.Checked)
+                {
+                    Gool_services.Checked = false;
+                }
+                else if (scan_Warp.Checked)
+                {
+                    scan_Warp.Checked = false;
+                }
+                else
+                {
+                    if (!Gool_services.Checked)
+                    {
+                        Gool_services.Checked = true;
+                    }
+                    else if (!scan_Warp.Checked)
+                    {
+                        scan_Warp.Checked = true;
+                    }
+                }
+                Log("Guard Mode Try Again");
+                start_Guard.PerformClick();
+                start_Guard.PerformClick();
+            }
+        }
+
+
     }
 }

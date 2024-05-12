@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FreedomGuard));
             this.start_Guard = new System.Windows.Forms.Button();
             this.Status = new System.Windows.Forms.StatusStrip();
@@ -54,6 +55,11 @@
             this.scan_Warp = new System.Windows.Forms.CheckBox();
             this.PsCountry = new System.Windows.Forms.ComboBox();
             this.TextShowps = new System.Windows.Forms.Label();
+            this.timeText = new System.Windows.Forms.Label();
+            this.ConnectTimer = new System.Windows.Forms.Timer(this.components);
+            this.guardModeTimer = new System.Windows.Forms.Timer(this.components);
+            this.Guard_Mode = new System.Windows.Forms.CheckBox();
+            this.TextTimeConnected = new System.Windows.Forms.Label();
             this.Status.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             this.SelectLanguage.SuspendLayout();
@@ -62,10 +68,13 @@
             // 
             // start_Guard
             // 
+            this.start_Guard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.start_Guard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.start_Guard.Location = new System.Drawing.Point(228, 83);
             this.start_Guard.Name = "start_Guard";
-            this.start_Guard.Size = new System.Drawing.Size(124, 38);
+            this.start_Guard.Size = new System.Drawing.Size(118, 38);
             this.start_Guard.TabIndex = 0;
             this.start_Guard.Text = "Connect";
             this.start_Guard.UseVisualStyleBackColor = true;
@@ -101,16 +110,17 @@
             this.LogApp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.LogApp.Location = new System.Drawing.Point(166, 205);
+            this.LogApp.Location = new System.Drawing.Point(166, 258);
             this.LogApp.Multiline = true;
             this.LogApp.Name = "LogApp";
-            this.LogApp.Size = new System.Drawing.Size(256, 172);
+            this.LogApp.Size = new System.Drawing.Size(261, 118);
             this.LogApp.TabIndex = 4;
+            this.LogApp.Text = " ";
             // 
             // LabelLogApp
             // 
             this.LabelLogApp.AutoSize = true;
-            this.LabelLogApp.Location = new System.Drawing.Point(249, 189);
+            this.LabelLogApp.Location = new System.Drawing.Point(261, 239);
             this.LabelLogApp.Name = "LabelLogApp";
             this.LabelLogApp.Size = new System.Drawing.Size(80, 13);
             this.LabelLogApp.TabIndex = 5;
@@ -118,6 +128,9 @@
             // 
             // Gool_services
             // 
+            this.Gool_services.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Gool_services.AutoSize = true;
             this.Gool_services.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.Gool_services.Location = new System.Drawing.Point(166, 127);
@@ -258,7 +271,7 @@
             this.CloseApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CloseApp.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18.25F, System.Drawing.FontStyle.Bold);
             this.CloseApp.ForeColor = System.Drawing.Color.Red;
-            this.CloseApp.Location = new System.Drawing.Point(401, -2);
+            this.CloseApp.Location = new System.Drawing.Point(402, -2);
             this.CloseApp.Name = "CloseApp";
             this.CloseApp.Size = new System.Drawing.Size(33, 34);
             this.CloseApp.TabIndex = 2;
@@ -292,20 +305,26 @@
             // 
             // StatusText
             // 
+            this.StatusText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.StatusText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StatusText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.StatusText.Location = new System.Drawing.Point(191, 60);
             this.StatusText.Name = "StatusText";
-            this.StatusText.Size = new System.Drawing.Size(200, 20);
+            this.StatusText.Size = new System.Drawing.Size(194, 20);
             this.StatusText.TabIndex = 10;
             this.StatusText.Text = "Disconnected";
             this.StatusText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // scan_Warp
             // 
+            this.scan_Warp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.scan_Warp.AutoSize = true;
             this.scan_Warp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.scan_Warp.Location = new System.Drawing.Point(167, 157);
+            this.scan_Warp.Location = new System.Drawing.Point(166, 150);
             this.scan_Warp.Name = "scan_Warp";
             this.scan_Warp.Size = new System.Drawing.Size(111, 24);
             this.scan_Warp.TabIndex = 11;
@@ -315,6 +334,9 @@
             // 
             // PsCountry
             // 
+            this.PsCountry.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.PsCountry.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.PsCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.PsCountry.FormattingEnabled = true;
@@ -350,27 +372,75 @@
             "Slovakia (SK)",
             "Ukraine (UA)",
             "United States (US)"});
-            this.PsCountry.Location = new System.Drawing.Point(303, 157);
+            this.PsCountry.Location = new System.Drawing.Point(299, 153);
             this.PsCountry.Name = "PsCountry";
-            this.PsCountry.Size = new System.Drawing.Size(119, 28);
+            this.PsCountry.Size = new System.Drawing.Size(123, 28);
             this.PsCountry.TabIndex = 12;
             this.PsCountry.SelectedIndexChanged += new System.EventHandler(this.PsCountry_SelectedIndexChanged);
             // 
             // TextShowps
             // 
+            this.TextShowps.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TextShowps.AutoSize = true;
             this.TextShowps.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.TextShowps.Location = new System.Drawing.Point(304, 130);
+            this.TextShowps.Location = new System.Drawing.Point(296, 127);
             this.TextShowps.Name = "TextShowps";
             this.TextShowps.Size = new System.Drawing.Size(118, 18);
             this.TextShowps.TabIndex = 13;
             this.TextShowps.Text = "Psiphon Country";
+            // 
+            // timeText
+            // 
+            this.timeText.AutoSize = true;
+            this.timeText.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.timeText.Location = new System.Drawing.Point(296, 205);
+            this.timeText.Name = "timeText";
+            this.timeText.Size = new System.Drawing.Size(28, 18);
+            this.timeText.TabIndex = 14;
+            this.timeText.Text = "0 s";
+            // 
+            // ConnectTimer
+            // 
+            this.ConnectTimer.Interval = 1000;
+            this.ConnectTimer.Tick += new System.EventHandler(this.ConnectTimer_Tick);
+            // 
+            // guardModeTimer
+            // 
+            this.guardModeTimer.Interval = 6000;
+            this.guardModeTimer.Tick += new System.EventHandler(this.guardModeTimer_Tick);
+            // 
+            // Guard_Mode
+            // 
+            this.Guard_Mode.AutoSize = true;
+            this.Guard_Mode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.Guard_Mode.Location = new System.Drawing.Point(166, 174);
+            this.Guard_Mode.Name = "Guard_Mode";
+            this.Guard_Mode.Size = new System.Drawing.Size(120, 24);
+            this.Guard_Mode.TabIndex = 15;
+            this.Guard_Mode.Text = "Guard Mode";
+            this.Guard_Mode.UseVisualStyleBackColor = true;
+            this.Guard_Mode.CheckedChanged += new System.EventHandler(this.Guard_Mode_CheckedChanged);
+            // 
+            // TextTimeConnected
+            // 
+            this.TextTimeConnected.AutoSize = true;
+            this.TextTimeConnected.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextTimeConnected.Location = new System.Drawing.Point(166, 204);
+            this.TextTimeConnected.Name = "TextTimeConnected";
+            this.TextTimeConnected.Size = new System.Drawing.Size(131, 20);
+            this.TextTimeConnected.TabIndex = 16;
+            this.TextTimeConnected.Text = "Time Connected =";
             // 
             // FreedomGuard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 405);
+            this.Controls.Add(this.TextTimeConnected);
+            this.Controls.Add(this.Guard_Mode);
+            this.Controls.Add(this.timeText);
             this.Controls.Add(this.TextShowps);
             this.Controls.Add(this.PsCountry);
             this.Controls.Add(this.scan_Warp);
@@ -429,6 +499,11 @@
         private System.Windows.Forms.Button ShowDns;
         private System.Windows.Forms.Button ExitApp;
         private System.Windows.Forms.Button showAbout;
+        private System.Windows.Forms.Label timeText;
+        private System.Windows.Forms.Timer ConnectTimer;
+        private System.Windows.Forms.CheckBox Guard_Mode;
+        private System.Windows.Forms.Label TextTimeConnected;
+        private System.Windows.Forms.Timer guardModeTimer;
     }
 }
 
