@@ -7,6 +7,7 @@ Is Unoffical Client for warp plus in ([Github](https://github.com/bepass-org/war
 * Full English Language
 * Psiphon Mode + 33 Country
 * Scan Mode (IP Clean)
+* Guard Mode
 * ...
 # install 
  Go ([Latest](https://github.com/fwldom/Freedom-Guard/releases/latest))
@@ -19,8 +20,9 @@ Is Unoffical Client for warp plus in ([Github](https://github.com/bepass-org/war
 * زبان انگلیسی
 * سایفون مود برای دور زدن تحریم ها
 * حالت اسکن (آیپی تمیز)
+* حالت نگهابان
 * ...
 # نصب 
  به ([Latest](https://github.com/fwldom/Freedom-Guard/releases/latest)) بروید
  # VirusTotal |  نتیجه ویروس توتال
-([Virus Total Freedom-Guard.zip](https://www.virustotal.com/gui/file/1e301b1954ae1e1eef6287baa43819173e1b5e6f1270e5611d2ac13205ce283c))
+([Virustotal Freedom-Guard.zip](https://www.virustotal.com/gui/file/1ee328c32117de333fae011309d9e327bff6b2eeb2217d35639b3f80b8fc6c2a))
