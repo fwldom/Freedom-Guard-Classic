@@ -11,10 +11,7 @@ C:\Users\Fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guar
 C:\Users\Fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\bin\Debug\Freedom-Guard.application
 C:\Users\Fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\obj\Debug\Freedom-Guard.exe.manifest
 C:\Users\Fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\obj\Debug\Freedom-Guard.application
-C:\Users\Fwldom\Documents\Visual Studio 2015\Projects\Freedom-Guard\Freedom-Guard\obj\Debug\Freedom_Guard.Freedom_Guard_V2ray.resources
 C:\Users\Fwldom\Documents\Visual Studio 2015\Projects\Freedom-Guard\Freedom-Guard\obj\Debug\Freedom_Guard.Freedom_Guard_Dns.resources
-C:\Users\Fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\bin\Debug\Newtonsoft.Json.xml
 D:\Programming\Software\C#\Freedom-Guard\Freedom-Guard\bin\Debug\Freedom-Guard.exe.config
 D:\Programming\Software\C#\Freedom-Guard\Freedom-Guard\bin\Debug\Freedom-Guard.exe.manifest
 D:\Programming\Software\C#\Freedom-Guard\Freedom-Guard\bin\Debug\Freedom-Guard.application
@@ -34,3 +31,5 @@ D:\Programming\Software\C#\Freedom-Guard\Freedom-Guard\obj\Debug\Freedom-Guard.a
 D:\Programming\Software\C#\Freedom-Guard\Freedom-Guard\obj\Debug\Freedom-Guard.csproj.CopyComplete
 D:\Programming\Software\C#\Freedom-Guard\Freedom-Guard\obj\Debug\Freedom-Guard.exe
 D:\Programming\Software\C#\Freedom-Guard\Freedom-Guard\obj\Debug\Freedom-Guard.pdb
+C:\Users\Fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\bin\Debug\System.Net.NetworkInformation.dll
+C:\Users\Fwldom\documents\visual studio 2015\Projects\Freedom-Guard\Freedom-Guard\bin\Debug\System.Net.Ping.dll

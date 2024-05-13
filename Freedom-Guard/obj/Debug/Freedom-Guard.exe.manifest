@@ -43,36 +43,24 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Freedom-Guard.exe" size="248808">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Freedom-Guard.exe" size="187880">
       <assemblyIdentity name="Freedom-Guard" version="1.2.3.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>mb21nMNCHbETEKGPhUacrPnPQr8XoMy9IBN6DQOuQec=</dsig:DigestValue>
+        <dsig:DigestValue>TBmw/849O9EqwYiyuC27+C20vDIF+O4MIDUUSZSAFgc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Newtonsoft.Json.dll" size="711952">
-      <assemblyIdentity name="Newtonsoft.Json" version="13.0.0.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>4eJ697B+7t9c5xqSVfBCKBam/FhJpIPGcU4bRyBE+p0=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <file name="Freedom-Guard.exe.config" size="542">
+  <file name="Freedom-Guard.exe.config" size="544">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Xyfr555zLpi2gUNB8QBCHBjAaN8k3tzAZFdPZ4QXWEQ=</dsig:DigestValue>
+      <dsig:DigestValue>8T6IVyR/TShdy6vVJirekkfQZI1qIjKp2/pQq1egnnQ=</dsig:DigestValue>
     </hash>
   </file>
   <file name="ico.ico" size="50372">

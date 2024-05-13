@@ -114,7 +114,6 @@ namespace Freedom_Guard
             System.Threading.Thread.Sleep(5000);// Sleep 5s And test connect with ircf.space && if lose proxy => Stop Services
             if (PingWithSocks5Proxy("127.0.0.1", 8086, "ircf.space"))
             {
-                ConnectTimer.Enabled = true;
                 if (Guard_Mode.Checked)
                 {
                     guardModeTimer.Enabled = true;
@@ -164,6 +163,7 @@ namespace Freedom_Guard
                         start_Guard.Text = "Disconnect";
                         StatusText.Text = "Connected";
                     }
+                    ConnectTimer.Enabled = true;
                     Thread TestConn = new Thread(TestConnect);
                     TestConn.Start(); // Test Connection
                     StatusLabel.Text = "Running Warp " + services + " ...";
@@ -196,7 +196,7 @@ namespace Freedom_Guard
             }
 
         }
-        static void SetProxySettings(string proxyAddress, string proxyPort, bool proxyEnabled)
+        public static void SetProxySettings(string proxyAddress, string proxyPort, bool proxyEnabled)
         {
             // Edit Registery Windows For Set System Proxy
             string registryKey = @"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings";
@@ -425,12 +425,6 @@ namespace Freedom_Guard
             Stop_Guard();
             Application.Restart();
         }
-        private void ShowV2Ray_Click(object sender, EventArgs e)
-        {
-            Freedom_Guard_V2ray V2ray = new Freedom_Guard_V2ray();
-            V2ray.Show();
-        }
-
         private void ShowDns_Click(object sender, EventArgs e)
         {
             Freedom_Guard_Dns DNS = new Freedom_Guard_Dns();
@@ -486,11 +480,10 @@ namespace Freedom_Guard
 
         private void ConnectTimer_Tick(object sender, EventArgs e)
         {
+            // add 1 sec to text timer
             timeConnected++;
             timeText.Text = timeConnected + " s";
         }
-
-
 
         private void Guard_Mode_CheckedChanged(object sender, EventArgs e)
         {
@@ -539,7 +532,5 @@ namespace Freedom_Guard
                 start_Guard.PerformClick();
             }
         }
-
-
     }
 }

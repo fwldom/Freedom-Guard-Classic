@@ -47,7 +47,6 @@
             this.persianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.topPanel = new System.Windows.Forms.Panel();
             this.ShowDns = new System.Windows.Forms.Button();
-            this.ShowV2Ray = new System.Windows.Forms.Button();
             this.CloseApp = new System.Windows.Forms.Button();
             this.TextLabelTopPanel = new System.Windows.Forms.Label();
             this.MenuShowHide = new System.Windows.Forms.Button();
@@ -229,7 +228,6 @@
             // 
             this.topPanel.BackColor = System.Drawing.Color.White;
             this.topPanel.Controls.Add(this.ShowDns);
-            this.topPanel.Controls.Add(this.ShowV2Ray);
             this.topPanel.Controls.Add(this.CloseApp);
             this.topPanel.Controls.Add(this.TextLabelTopPanel);
             this.topPanel.Controls.Add(this.MenuShowHide);
@@ -245,24 +243,13 @@
             // ShowDns
             // 
             this.ShowDns.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.ShowDns.Location = new System.Drawing.Point(127, 4);
+            this.ShowDns.Location = new System.Drawing.Point(46, 3);
             this.ShowDns.Name = "ShowDns";
             this.ShowDns.Size = new System.Drawing.Size(75, 27);
             this.ShowDns.TabIndex = 15;
             this.ShowDns.Text = "DNS";
             this.ShowDns.UseVisualStyleBackColor = true;
             this.ShowDns.Click += new System.EventHandler(this.ShowDns_Click);
-            // 
-            // ShowV2Ray
-            // 
-            this.ShowV2Ray.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.ShowV2Ray.Location = new System.Drawing.Point(46, 4);
-            this.ShowV2Ray.Name = "ShowV2Ray";
-            this.ShowV2Ray.Size = new System.Drawing.Size(75, 27);
-            this.ShowV2Ray.TabIndex = 14;
-            this.ShowV2Ray.Text = "V2ray";
-            this.ShowV2Ray.UseVisualStyleBackColor = true;
-            this.ShowV2Ray.Click += new System.EventHandler(this.ShowV2Ray_Click);
             // 
             // CloseApp
             // 
@@ -495,7 +482,6 @@
         private System.Windows.Forms.ComboBox PsCountry;
         private System.Windows.Forms.Label TextShowps;
         private System.Windows.Forms.Button Restart;
-        private System.Windows.Forms.Button ShowV2Ray;
         private System.Windows.Forms.Button ShowDns;
         private System.Windows.Forms.Button ExitApp;
         private System.Windows.Forms.Button showAbout;

@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Freedom_Guard</RootNamespace>
     <AssemblyName>Freedom-Guard</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -87,15 +87,14 @@
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -127,12 +126,6 @@
     <Compile Include="Freedom-Guard-Dns.Designer.cs">
       <DependentUpon>Freedom-Guard-Dns.cs</DependentUpon>
     </Compile>
-    <Compile Include="Freedom-Guard-V2ray.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Freedom-Guard-V2ray.Designer.cs">
-      <DependentUpon>Freedom-Guard-V2ray.cs</DependentUpon>
-    </Compile>
     <Compile Include="FreedomGuard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,9 +136,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Freedom-Guard-Dns.resx">
       <DependentUpon>Freedom-Guard-Dns.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Freedom-Guard-V2ray.resx">
-      <DependentUpon>Freedom-Guard-V2ray.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FreedomGuard.resx">
       <DependentUpon>FreedomGuard.cs</DependentUpon>
@@ -158,6 +148,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.manifest" />
     <None Include="Freedom-Guard_TemporaryKey.pfx" />

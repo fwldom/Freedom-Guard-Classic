@@ -4,17 +4,17 @@
   <description asmv2:publisher="Freedom-Guard" asmv2:product="Freedom-Guard" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" />
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
-    <framework targetVersion="4.8" profile="Full" supportedRuntime="4.0.30319" />
+    <framework targetVersion="4.8.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Freedom-Guard.exe.manifest" size="5603">
+    <dependentAssembly dependencyType="install" codebase="Freedom-Guard.exe.manifest" size="4919">
       <assemblyIdentity name="Freedom-Guard.exe" version="1.2.3.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>BFPSywVOUA+6goA6Yq771vy2IAteTYsBFJBsI326cgs=</dsig:DigestValue>
+        <dsig:DigestValue>hjOOtuv5PBCj4zn15uTeAi0XQ7T1TeiDuKx7/xhRGV8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
