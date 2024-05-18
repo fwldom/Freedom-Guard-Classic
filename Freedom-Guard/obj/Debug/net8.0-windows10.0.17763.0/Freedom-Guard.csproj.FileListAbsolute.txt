@@ -1,0 +1,5 @@
+E:\Projects\Freedom-Guard\Freedom-Guard\obj\Debug\net8.0-windows10.0.17763.0\Freedom-Guard.csproj.AssemblyReference.cache
+E:\Projects\Freedom-Guard\Freedom-Guard\obj\Debug\net8.0-windows10.0.17763.0\Freedom_Guard.Freedom_Guard_Dns.resources
+E:\Projects\Freedom-Guard\Freedom-Guard\obj\Debug\net8.0-windows10.0.17763.0\Freedom_Guard.FreedomGuard.resources
+E:\Projects\Freedom-Guard\Freedom-Guard\obj\Debug\net8.0-windows10.0.17763.0\Freedom_Guard.Main.Settings.resources
+E:\Projects\Freedom-Guard\Freedom-Guard\obj\Debug\net8.0-windows10.0.17763.0\Freedom-Guard.csproj.GenerateResource.cache

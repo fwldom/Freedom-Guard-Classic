@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "Fiv5xZX+Qlv8F+93wpEcqLSMlb5dOJhJRsXuo8Q///PjWtigL7RL6aVuYQXGBrHy2Wr4FXqUhigBEpYQgsXbzA==",
+  "success": true,
+  "projectFilePath": "E:\\Projects\\Freedom-Guard\\Freedom-Guard\\Freedom-Guard.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\fwldo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\fwldo\\.nuget\\packages\\microsoft.visualbasic\\10.3.0\\microsoft.visualbasic.10.3.0.nupkg.sha512",
+    "C:\\Users\\fwldo\\.nuget\\packages\\system.codedom\\8.0.0\\system.codedom.8.0.0.nupkg.sha512",
+    "C:\\Users\\fwldo\\.nuget\\packages\\system.configuration.configurationmanager\\8.0.0\\system.configuration.configurationmanager.8.0.0.nupkg.sha512",
+    "C:\\Users\\fwldo\\.nuget\\packages\\system.data.datasetextensions\\4.5.0\\system.data.datasetextensions.4.5.0.nupkg.sha512",
+    "C:\\Users\\fwldo\\.nuget\\packages\\system.diagnostics.eventlog\\8.0.0\\system.diagnostics.eventlog.8.0.0.nupkg.sha512",
+    "C:\\Users\\fwldo\\.nuget\\packages\\system.management\\8.0.0\\system.management.8.0.0.nupkg.sha512",
+    "C:\\Users\\fwldo\\.nuget\\packages\\system.security.cryptography.protecteddata\\8.0.0\\system.security.cryptography.protecteddata.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
