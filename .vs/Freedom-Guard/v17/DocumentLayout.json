@@ -1,12 +1,53 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\Projects\\Freedom-Guard\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E69DC5D2-BE96-4DFC-8161-4948B0100A4E}|Freedom-Guard\\Freedom-Guard.csproj|e:\\projects\\freedom-guard\\freedom-guard\\main\\freedomguard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E69DC5D2-BE96-4DFC-8161-4948B0100A4E}|Freedom-Guard\\Freedom-Guard.csproj|solutionrelative:freedom-guard\\main\\freedomguard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E69DC5D2-BE96-4DFC-8161-4948B0100A4E}|Freedom-Guard\\Freedom-Guard.csproj|e:\\projects\\freedom-guard\\freedom-guard\\main\\freedomguard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E69DC5D2-BE96-4DFC-8161-4948B0100A4E}|Freedom-Guard\\Freedom-Guard.csproj|solutionrelative:freedom-guard\\main\\freedomguard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FreedomGuard.cs",
+              "DocumentMoniker": "E:\\Projects\\Freedom-Guard\\Freedom-Guard\\Main\\FreedomGuard.cs",
+              "RelativeDocumentMoniker": "Freedom-Guard\\Main\\FreedomGuard.cs",
+              "ToolTip": "E:\\Projects\\Freedom-Guard\\Freedom-Guard\\Main\\FreedomGuard.cs",
+              "RelativeToolTip": "Freedom-Guard\\Main\\FreedomGuard.cs",
+              "ViewState": "AQIAAFgBAAAAAAAAAAAswIMBAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-20T13:50:44.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FreedomGuard.cs [Design]",
+              "DocumentMoniker": "E:\\Projects\\Freedom-Guard\\Freedom-Guard\\Main\\FreedomGuard.cs",
+              "RelativeDocumentMoniker": "Freedom-Guard\\Main\\FreedomGuard.cs",
+              "ToolTip": "E:\\Projects\\Freedom-Guard\\Freedom-Guard\\Main\\FreedomGuard.cs [Design]",
+              "RelativeToolTip": "Freedom-Guard\\Main\\FreedomGuard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-20T13:50:41.525Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

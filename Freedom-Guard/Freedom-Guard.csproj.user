@@ -17,6 +17,9 @@
     <Compile Update="Features\Freedom-Guard-Dns.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Features\GuardN\MainGuardN.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Main\FreedomGuard.cs">
       <SubType>Form</SubType>
     </Compile>
