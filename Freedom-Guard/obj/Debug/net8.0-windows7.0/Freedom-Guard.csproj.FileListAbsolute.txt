@@ -25,3 +25,4 @@ E:\Projects\Freedom-Guard\Freedom-Guard\obj\Debug\net8.0-windows7.0\Freedom-Guar
 E:\Projects\Freedom-Guard\Freedom-Guard\obj\Debug\net8.0-windows7.0\Freedom-.1A1FAA85.Up2Date
 E:\Projects\Freedom-Guard\Freedom-Guard\obj\Debug\net8.0-windows7.0\Freedom-Guard.genruntimeconfig.cache
 E:\Projects\Freedom-Guard\Freedom-Guard\obj\Debug\net8.0-windows7.0\ref\Freedom-Guard.dll
+E:\Projects\Freedom-Guard\Freedom-Guard\obj\Debug\net8.0-windows7.0\Freedom_Guard.Features.GuardN.MainGuardN.resources

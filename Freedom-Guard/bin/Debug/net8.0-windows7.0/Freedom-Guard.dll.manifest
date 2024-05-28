@@ -54,13 +54,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Freedom-Guard.dll" size="241664">
+  <file name="Freedom-Guard.dll" size="243200">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>WeRqtGh4CkEdICSeo8CkMCUIpQsBWrjMAFu1a0hVBRA=</dsig:DigestValue>
+      <dsig:DigestValue>F2ndsZDFyVfc+HoJNTJinJZYwPCgajsNITvvF86luM8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Freedom-Guard.dll.config" size="542">

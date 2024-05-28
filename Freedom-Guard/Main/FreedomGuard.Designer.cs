@@ -45,8 +45,8 @@
             Restart = new System.Windows.Forms.Button();
             SelectLanguage = new System.Windows.Forms.MenuStrip();
             languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            persianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            EnglishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            PersianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             topPanel = new System.Windows.Forms.Panel();
             minimizeBtn = new System.Windows.Forms.Button();
             ShowDns = new System.Windows.Forms.Button();
@@ -59,9 +59,9 @@
             TextShowps = new System.Windows.Forms.Label();
             timeText = new System.Windows.Forms.Label();
             ConnectTimer = new System.Windows.Forms.Timer(components);
-            guardModeTimer = new System.Windows.Forms.Timer(components);
             Guard_Mode = new System.Windows.Forms.CheckBox();
             TextTimeConnected = new System.Windows.Forms.Label();
+            guardModeTimer = new System.Windows.Forms.Timer(components);
             Status.SuspendLayout();
             MenuPanel.SuspendLayout();
             SelectLanguage.SuspendLayout();
@@ -166,6 +166,7 @@
             clearCache.TabIndex = 19;
             clearCache.Text = "Clear Cache";
             clearCache.UseVisualStyleBackColor = true;
+            clearCache.Visible = false;
             clearCache.Click += clearCache_Click;
             // 
             // SettingShow
@@ -233,24 +234,24 @@
             // 
             // languageToolStripMenuItem
             // 
-            languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { englishToolStripMenuItem, persianToolStripMenuItem });
+            languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { EnglishToolStripMenuItem, PersianToolStripMenuItem });
             languageToolStripMenuItem.Name = "languageToolStripMenuItem";
             languageToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             languageToolStripMenuItem.Text = "Language";
             // 
-            // englishToolStripMenuItem
+            // EnglishToolStripMenuItem
             // 
-            englishToolStripMenuItem.Name = "englishToolStripMenuItem";
-            englishToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            englishToolStripMenuItem.Text = "English";
-            englishToolStripMenuItem.Click += englishToolStripMenuItem_Click;
+            EnglishToolStripMenuItem.Name = "EnglishToolStripMenuItem";
+            EnglishToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            EnglishToolStripMenuItem.Text = "English";
+            EnglishToolStripMenuItem.Click += englishToolStripMenuItem_Click;
             // 
-            // persianToolStripMenuItem
+            // PersianToolStripMenuItem
             // 
-            persianToolStripMenuItem.Name = "persianToolStripMenuItem";
-            persianToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            persianToolStripMenuItem.Text = "Persian (فارسی)";
-            persianToolStripMenuItem.Click += persianToolStripMenuItem_Click;
+            PersianToolStripMenuItem.Name = "PersianToolStripMenuItem";
+            PersianToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            PersianToolStripMenuItem.Text = "Persian (فارسی)";
+            PersianToolStripMenuItem.Click += persianToolStripMenuItem_Click;
             // 
             // topPanel
             // 
@@ -411,11 +412,6 @@
             ConnectTimer.Interval = 1000;
             ConnectTimer.Tick += ConnectTimer_Tick;
             // 
-            // guardModeTimer
-            // 
-            guardModeTimer.Interval = 6000;
-            guardModeTimer.Tick += guardModeTimer_Tick;
-            // 
             // Guard_Mode
             // 
             Guard_Mode.AutoSize = true;
@@ -439,6 +435,11 @@
             TextTimeConnected.Size = new System.Drawing.Size(131, 20);
             TextTimeConnected.TabIndex = 16;
             TextTimeConnected.Text = "Time Connected =";
+            // 
+            // guardModeTimer
+            // 
+            guardModeTimer.Interval = 5000;
+            guardModeTimer.Tick += guardModeTimer_Tick;
             // 
             // FreedomGuard
             // 
@@ -465,7 +466,6 @@
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Name = "FreedomGuard";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "Freedom Guard";
             FormClosed += FreedomGuard_FormClosed;
             Load += FreedomGuard_Load;
             Status.ResumeLayout(false);
@@ -494,8 +494,8 @@
         private System.Windows.Forms.Label TextLabelTopPanel;
         private System.Windows.Forms.Button CloseApp;
         private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem persianToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem EnglishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem PersianToolStripMenuItem;
         private System.Windows.Forms.MenuStrip SelectLanguage;
         private System.Windows.Forms.Label StatusText;
         private System.Windows.Forms.CheckBox scan_Warp;
@@ -509,10 +509,10 @@
         private System.Windows.Forms.Timer ConnectTimer;
         private System.Windows.Forms.CheckBox Guard_Mode;
         private System.Windows.Forms.Label TextTimeConnected;
-        private System.Windows.Forms.Timer guardModeTimer;
         private System.Windows.Forms.Button clearCache;
         private System.Windows.Forms.Button SettingShow;
         private System.Windows.Forms.Button minimizeBtn;
+        private System.Windows.Forms.Timer guardModeTimer;
     }
 }
 

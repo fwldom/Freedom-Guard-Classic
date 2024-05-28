@@ -23,6 +23,39 @@ namespace Freedom_Guard
     {
         public bool statusGuard = false;
         public int timeConnected = 0;
+        public string Switchs = "";
+        public void guardModeTimer_Tick(object sender, EventArgs e)
+        {
+            Log("Guard Mode: Try Again");
+            if (statusGuard == true)
+            {
+                if (PingWithSocks5Proxy("127.0.0.1", 8086, "ircf.space"))
+                {
+                    // Connected To Internet with Proxy socks5 127.0.0.1:8086
+                }
+                else if (Gool_services.Checked)
+                {
+                    Gool_services.Checked = false;
+                }
+                else if (scan_Warp.Checked)
+                {
+                    scan_Warp.Checked = false;
+                }
+                else
+                {
+                    if (!Gool_services.Checked)
+                    {
+                        Gool_services.Checked = true;
+                    }
+                    else if (!scan_Warp.Checked)
+                    {
+                        scan_Warp.Checked = true;
+                    }
+                }
+                statusGuard = false;
+                start_Guard.PerformClick();
+            }
+        }
         private void add_services(string args = "")
         {
             Switchs = "";
@@ -57,7 +90,6 @@ namespace Freedom_Guard
         {
             LogApp.AppendText(textlog + Environment.NewLine);
         }
-        public static string pingStatus = "";
         public static bool PingWithSocks5Proxy(string proxyHost, int proxyPort, string targetUrl)
         {
             try
@@ -115,23 +147,25 @@ namespace Freedom_Guard
             System.Threading.Thread.Sleep(5000);// Sleep 5s And test connect with ircf.space && if lose proxy => Stop Services
             if (PingWithSocks5Proxy("127.0.0.1", 8086, "ircf.space"))
             {
-                if (Guard_Mode.Checked)
-                {
-                    guardModeTimer.Enabled = true;
-                }
                 Log("Connected !");
             }
             else
             {
+                Log("Not Connected !");
+                // Not Connected To Internet With Proxy 
                 Stop_Guard();
             }
+            if (Guard_Mode.Checked == true)
+            {
+                MessageBox.Show(guardModeTimer.Enabled + "");
+                guardModeTimer.Enabled = true;
+            }
         }
-        public string Switchs = "";
         private void start_Guard_Click(object sender, EventArgs e)
         {
+            Log("Start Freedom Guard");
             // Stop Services , Run warp-plus with flags (services)  Window Hidden, Set Proxy , Log , Edit Text Btn&Lable , Test Connection 
             string exePath = "warp-plus.exe";
-            Stop_Guard();// Stop Services
             if (System.IO.File.Exists(exePath))
             {
                 if (statusGuard == false)
@@ -171,8 +205,7 @@ namespace Freedom_Guard
                     StatusLabel.Text = "Running Warp " + services + " ...";
                     statusGuard = true;
                 }
-                // If Service On => Off Service
-                else
+                else // If Service On => Off Service
                 {
                     if (Lang == "fa")
                     {
@@ -479,9 +512,10 @@ namespace Freedom_Guard
         {
             // btn about click (in menu)
             MessageBox.Show("Freedom Guard Warp + Gool + Psiphon + Dns Changer \n" +
-                "Version : 1.2.4 \n" +
+                "Version : 1.2.5 \n" +
                 "Contact : fwldom@duck.com \n" +
-                "Date Published : 1403/02/30 |  2024/05/19 \n", "About Freedom Guard");
+                "GitHub : github.com/fwldom/Freedom-Guard \n" +
+                "Date Published : 1403/02/8 |  2024/05/28 \n", "About Freedom Guard");
         }
 
         private void ConnectTimer_Tick(object sender, EventArgs e)
@@ -506,38 +540,6 @@ namespace Freedom_Guard
             add_services("");
         }
 
-        private void guardModeTimer_Tick(object sender, EventArgs e)
-        {
-            if (statusGuard == true)
-            {
-                if (PingWithSocks5Proxy("127.0.0.1", 8086, "ircf.space"))
-                {
-                    // Connected To Internet with Proxy socks5 127.0.0.1:8086
-                }
-                else if (Gool_services.Checked)
-                {
-                    Gool_services.Checked = false;
-                }
-                else if (scan_Warp.Checked)
-                {
-                    scan_Warp.Checked = false;
-                }
-                else
-                {
-                    if (!Gool_services.Checked)
-                    {
-                        Gool_services.Checked = true;
-                    }
-                    else if (!scan_Warp.Checked)
-                    {
-                        scan_Warp.Checked = true;
-                    }
-                }
-                Log("Guard Mode Try Again");
-                start_Guard.PerformClick();
-                start_Guard.PerformClick();
-            }
-        }
 
         private void minimizeBtn_Click(object sender, EventArgs e)
         {
@@ -555,11 +557,10 @@ namespace Freedom_Guard
             {
             }
         }
-        private void SettingShow_Click(object sender,EventArgs e)
+        private void SettingShow_Click(object sender, EventArgs e)
         {
             Settings FormSettings = new Settings();
             FormSettings.Show();
-        }
-
+        }      
     }
 }
